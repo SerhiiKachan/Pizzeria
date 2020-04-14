@@ -22,7 +22,7 @@ public class OrderListController {
 
     @GetMapping(value = "/orders/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public OrderList getOrder(@PathVariable Long id) {
-        return orderListService.getOrderById(id);
+        return orderListService.getOrder(id);
     }
 
     @PostMapping(value = "/orders", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -36,7 +36,7 @@ public class OrderListController {
     }
 
     @DeleteMapping(value = "/orders/{id}")
-    public void deleteOrderList(@PathVariable Long id) {
+    public void deleteOrder(@PathVariable Long id) {
         orderListService.deleteOrder(id);
     }
 }

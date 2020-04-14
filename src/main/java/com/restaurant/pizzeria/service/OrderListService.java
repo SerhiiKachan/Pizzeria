@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class OrderListService {
@@ -14,7 +13,7 @@ public class OrderListService {
     @Autowired
     private OrderListRepository orderListRepository;
 
-    public OrderList getOrderById(long id) {
+    public OrderList getOrder(long id) {
         return orderListRepository.findById(id).get();
     }
 
@@ -31,6 +30,6 @@ public class OrderListService {
     }
 
     public void deleteOrder(long id) {
-        orderListRepository.delete(this.getOrderById(id));
+        orderListRepository.delete(this.getOrder(id));
     }
 }
